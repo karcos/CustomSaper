@@ -21,28 +21,20 @@ void UserSettingsController::run_resolution_editor() {
 
         const int c = _getch();
 
-        switch (c) {
-            case static_cast<int>(Keys::ARROW_UP):
+        switch (std::tolower(c)) {
             case 'w':
-            case 'W':
                 tmp_height--;
                 break;
 
-            case static_cast<int>(Keys::ARROW_DOWN):
             case 's':
-            case 'S':
                 tmp_height++;
                 break;
 
-            case static_cast<int>(Keys::ARROW_LEFT):
             case 'a':
-            case 'A':
                 tmp_width--;
                 break;
 
-            case static_cast<int>(Keys::ARROW_RIGHT):
             case 'd':
-            case 'D':
                 tmp_width++;
                 break;
 
@@ -66,13 +58,11 @@ std::unique_ptr<Controller> UserSettingsController::run() {
 
         const int c = _getch();
 
-        switch (c) {
+        switch (std::tolower(c)) {
             case 's':
-            case 'S':
                 user_settings_->goto_next_option();
                 break;
             case 'w':
-            case 'W':
                 user_settings_->goto_previous_option();
                 break;
             case static_cast<int>(Keys::ENTER):
@@ -84,13 +74,11 @@ std::unique_ptr<Controller> UserSettingsController::run() {
                     break;
                 }
             case 'a':
-            case 'A':
                 if (static_cast<UserSettingsOptions>(user_settings_->get_focused_option()) == UserSettingsOptions::VOLUME) {
                     user_settings_->volume_down();
                 }
                 break;
             case 'd':
-            case 'D':
                 if (static_cast<UserSettingsOptions>(user_settings_->get_focused_option()) == UserSettingsOptions::VOLUME) {
                     user_settings_->volume_up();
                 }

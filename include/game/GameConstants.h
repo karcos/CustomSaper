@@ -6,7 +6,8 @@
 enum class GameStatus {
     LOSE,
     WIN,
-    DURING
+    DURING,
+    PAUSED
 };
 
 namespace GameConstants {

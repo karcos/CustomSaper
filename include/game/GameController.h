@@ -13,6 +13,9 @@ class GameController final : public Controller {
     std::shared_ptr<Game> game_;
     std::shared_ptr<GameView> game_view_;
 
+    void handle_game_input(int c);
+    void handle_pause_input(int c);
+
 public:
     explicit GameController(const AppContext& ctx) :
         Controller(ctx),
@@ -20,4 +23,5 @@ public:
         game_view_(std::make_shared<GameView>(game_)) {}
 
     std::unique_ptr<Controller> run() override;
+
 };
