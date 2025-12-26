@@ -62,16 +62,12 @@ namespace ConsoleColor {
 
     void set_text_color(const std::uint32_t hex_color) {
         init_ansi();
-        std::cout << "\033[38;2;" << r(hex_color) << ';'
-            << g(hex_color) << ';'
-            << b(hex_color) << 'm';
+        std::cout << "\033[38;2;" << r(hex_color) << ';' << g(hex_color) << ';' << b(hex_color) << 'm';
     }
 
     void set_background_color(const std::uint32_t hex_color) {
         init_ansi();
-        std::cout << "\033[48;2;" << r(hex_color) << ';'
-            << g(hex_color) << ';'
-            << b(hex_color) << 'm';
+        std::cout << "\033[48;2;" << r(hex_color) << ';' << g(hex_color) << ';' << b(hex_color) << 'm';
     }
 
     void set_colors(const std::uint32_t text_hex_color, const std::uint32_t bg_hex_color) {

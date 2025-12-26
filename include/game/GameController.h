@@ -14,10 +14,10 @@ class GameController final : public Controller {
     std::shared_ptr<GameView> game_view_;
 
     void handle_game_input(int c);
-    void handle_pause_input(int c);
+    static void handle_pause_input(int c);
 
 public:
-    explicit GameController(const AppContext& ctx) :
+    explicit GameController(AppContext& ctx) :
         Controller(ctx),
         game_(std::make_shared<Game>()),
         game_view_(std::make_shared<GameView>(game_)) {}

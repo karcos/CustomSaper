@@ -11,7 +11,9 @@ void UserSettingsView::print() const noexcept {
     if (user_settings) {
         for (int i = 0; i < user_settings->options().size(); i++) {
             if (user_settings->get_focused_option() == i) { ConsoleColor::print_text(user_settings->options()[i], UserSettingsViewConstants::focused_option_color); }
-            else { std::cout << user_settings->options()[i] << std::endl; }
+            else { std::cout << user_settings->options()[i]; }
+
+            std::cout << std::endl;
         }
     }
 }

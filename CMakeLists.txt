@@ -50,4 +50,7 @@ add_executable(Aplikacja_konsoli_C__2
         src/main_menu/MainMenuView.cpp
         src/game/GameView.cpp
         include/game/GameView.h
+        src/logger/Logger.cpp
+        include/Logger/Logger.h
+        include/logger/LoggerConstants.h
 )

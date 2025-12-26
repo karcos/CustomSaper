@@ -10,7 +10,9 @@ void MainMenuView::print() const noexcept {
     if (menu) {
         for (int i = 0; i < menu->options().size(); i++) {
             if (i == menu->get_focused_option()) { ConsoleColor::print_text(menu->options()[i], MainMenuConstants::focused_option_color); }
-            else { std::cout << menu->options()[i] << std::endl; }
+            else { std::cout << menu->options()[i]; }
+
+            std::cout << std::endl;
         }
     }
 }

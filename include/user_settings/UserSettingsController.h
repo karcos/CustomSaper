@@ -14,7 +14,7 @@ class UserSettingsController final : public Controller {
 
     void run_resolution_editor();
 public:
-    explicit UserSettingsController(const AppContext& ctx) :
+    explicit UserSettingsController(AppContext& ctx) :
         Controller(ctx),
         user_settings_(std::make_shared<UserSettings>()),
         user_settings_view_(std::make_shared<UserSettingsView>(user_settings_)) {}

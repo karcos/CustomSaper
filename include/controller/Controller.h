@@ -10,7 +10,7 @@ class Controller {
 protected:
     AppContext ctx_;
 public:
-    explicit Controller(AppContext ctx) : ctx_(std::move(ctx)) {}
+    explicit Controller(AppContext& ctx) {}
     virtual ~Controller() = default;
 
     virtual std::unique_ptr<Controller> run() = 0;
